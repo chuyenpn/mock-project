@@ -1,0 +1,45 @@
+.search {
+    margin: 10px;
+}
+
+.order-by {
+    padding-left: 30px;
+    .order-label {
+        flex: 1;
+    }
+    .select-box {
+        flex: 4;
+    }
+}
+
+.list {
+    margin: 10px;
+    .pagination {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .order-by {
+        display: block;
+        padding-left: 0px;
+        .order-label {
+            flex: 2;
+        }
+        .select-box {
+            flex: 2;
+        }
+    }
+}
+
+.image-list {
+    .image-item {
+        height: 300px;
+    }
+}
+
+.mock-pagination {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

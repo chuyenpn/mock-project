@@ -20,7 +20,7 @@ export const axios = Axios.create({
 axios.interceptors.request.use(authRequestInterceptor);
 axios.interceptors.response.use(
   (response) => {
-    return response.data;
+    return response;
   },
   (error) => {
     const message = error.response?.data?.message || error.message;

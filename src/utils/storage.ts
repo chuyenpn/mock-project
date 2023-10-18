@@ -1,4 +1,4 @@
-const storagePrefix = 'bulletproof_react_';
+const storagePrefix = 'mock_react_';
 
 const storage = {
   getToken: () => {

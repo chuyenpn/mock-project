@@ -20,6 +20,24 @@
     }
 }
 
+.image-list {
+    .image-item {
+        height: 300px;
+    }
+}
+
+.mock-pagination {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.detail-card {
+    margin-top: 20px;
+    .image-detail {
+        justify-content: space-between;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .order-by {
         display: block;
@@ -31,15 +49,8 @@
             flex: 2;
         }
     }
-}
 
-.image-list {
-    .image-item {
-        height: 300px;
+    .image-wrap {
+        align-items: flex-start;
     }
-}
-
-.mock-pagination {
-    margin-top: 30px;
-    margin-bottom: 30px;
 }

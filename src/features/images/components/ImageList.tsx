@@ -11,7 +11,7 @@ import SearchBar from './SearchBar';
 
 import './Image.scss';
 
-export const List = () => {
+export const ImageList = () => {
   const {
     getImages,
     images,

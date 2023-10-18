@@ -2,7 +2,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { useAuthStore } from '@/stores/auth';
 
-import { ImageList } from './ImageList';
+import { Detail } from './Detail';
+import { List } from './List';
 
 export const ImageRoutes = () => {
   const { isLoggedIn } = useAuthStore();
@@ -12,7 +13,8 @@ export const ImageRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<ImageList />} />
+      <Route path="/:id" element={<Detail />} />
+      <Route path="/" element={<List />} />
     </Routes>
   );
 };

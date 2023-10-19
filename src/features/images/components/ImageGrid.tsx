@@ -8,6 +8,10 @@ interface ImageGridProps {
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
+  if (images.length === 0) {
+    return <p className="no-records">No records found.</p>;
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 image-list">
       {images.map((image, index) => (

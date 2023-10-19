@@ -13,6 +13,8 @@ export const ImageDetail = () => {
   const { id } = useParams();
   const { getImageDetail, imageDetail, isLoading } = useImageDetail();
 
+  console.log('imageDetail', imageDetail);
+
   useEffect(() => {
     if (id) {
       getImageDetail(id);
@@ -37,13 +39,17 @@ export const ImageDetail = () => {
         {'<'} Back
       </button>
       <div className="flex justify-center items-center h-screen bg-gray-100 image-wrap">
-        <div className="mx-auto">
-          <img src={imageDetail?.largeImageURL} alt="" className="w-full h-auto img-max-height" />
-          <div className="flex items-center image-detail">
-            <h1 className="text-2xl font-bold my-4">{imageDetail?.user}</h1>
-            <p className="text-gray-500">Views: {imageDetail?.views}</p>
+        {imageDetail ? (
+          <div className="mx-auto">
+            <img src={imageDetail?.largeImageURL} alt="" className="w-full h-auto img-max-height" />
+            <div className="flex items-center image-detail">
+              <h1 className="text-2xl font-bold my-4">{imageDetail?.user}</h1>
+              <p className="text-gray-500">Views: {imageDetail?.views}</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <p className="no-records">No images found.</p>
+        )}
       </div>
     </div>
   );

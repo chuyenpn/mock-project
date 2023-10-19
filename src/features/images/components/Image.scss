@@ -30,10 +30,15 @@
     }
 }
 
+.image-wrap {
+  padding: 20px;
+}
+
 .mock-pagination {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .detail-card {
     margin-top: 20px;
     .image-detail {
@@ -48,6 +53,12 @@
     }
 }
 
+.no-records {
+  color: gray;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
 
 @media screen and (max-width: 768px) {
     .order-by {

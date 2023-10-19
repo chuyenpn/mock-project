@@ -22,13 +22,18 @@ export const useImageDetail = create<ImageDetail>((set: SetState<ImageDetail>) =
   imageDetail: null,
   getImageDetail: async (id: string) => {
     set({ isLoading: true });
-    const data: AxiosResponse<DataResponse> = await axios.get<
-      DataResponse,
-      AxiosResponse<DataResponse>
-    >(`?id=${id}&key=${API_KEY}`);
-    set({
-      imageDetail: data?.data?.hits[0],
-      isLoading: false,
-    });
+    let data: AxiosResponse<DataResponse> | null = null;
+    try {
+      data = await axios.get<DataResponse, AxiosResponse<DataResponse>>(`?id=${id}&key=${API_KEY}`);
+      set({
+        imageDetail: data?.data?.hits[0],
+        isLoading: false,
+      });
+    } catch (error) {
+      set({
+        imageDetail: null,
+        isLoading: false,
+      });
+    }
   },
 }));

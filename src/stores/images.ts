@@ -43,16 +43,26 @@ export const useImageStore = create<ImageStore>((set: SetState<ImageStore>) => (
   getImages: async () => {
     set({ isLoading: true });
     const { searchTerm, page, perPage, orderBy } = useImageStore.getState();
-    const data: AxiosResponse<DataResponse> = await axios.get<
-      DataResponse,
-      AxiosResponse<DataResponse>
-    >(`?q=${searchTerm}&page=${page}&per_page=${perPage}&order=${orderBy}&key=${API_KEY}`);
-    set({
-      images: data?.data?.hits,
-      totalPages:
-        Math.ceil(data?.data?.total / perPage) > 50 ? 50 : Math.ceil(data?.data?.total / perPage),
-      total: data?.data?.total > 450 ? 450 : data?.data?.total,
-      isLoading: false,
-    });
+    let data: AxiosResponse<DataResponse> | null = null;
+    try {
+      data = await axios.get<DataResponse, AxiosResponse<DataResponse>>(
+        `?q=${searchTerm}&page=${page}&per_page=${perPage}&order=${orderBy}&key=${API_KEY}`
+      );
+
+      set({
+        images: data?.data?.hits,
+        totalPages:
+          Math.ceil(data?.data?.total / perPage) > 50 ? 50 : Math.ceil(data?.data?.total / perPage),
+        total: data?.data?.total > 450 ? 450 : data?.data?.total,
+        isLoading: false,
+      });
+    } catch (error) {
+      set({
+        images: [],
+        totalPages: 0,
+        total: 0,
+        isLoading: false,
+      });
+    }
   },
 }));

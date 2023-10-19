@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { Link } from '@/components/Elements';
 import { Head } from '@/components/Head';
 import { useAuthStore } from '@/stores/auth';
 
@@ -16,7 +17,9 @@ export const Layout = ({ children, title, pageHeader }: LayoutProps) => {
       <Head title={title} />
       <header className="bg-gray-800 py-4">
         <div className="container mx-auto px-4 flex items-center space-between">
-          <h1 className="text-white text-2xl text-center"> {pageHeader} </h1>
+          <Link to="/">
+            <h1 className="text-white text-2xl text-center"> {pageHeader} </h1>
+          </Link>
           <button
             type="button"
             onClick={logout}

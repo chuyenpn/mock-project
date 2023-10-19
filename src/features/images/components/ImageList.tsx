@@ -74,7 +74,7 @@ export const ImageList = () => {
       )}
       <Pagination
         total={total}
-        page={page}
+        currentPage={page}
         perPage={perPage}
         totalPages={totalPages}
         handlePageChange={handlePageChange}

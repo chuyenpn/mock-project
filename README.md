@@ -10,9 +10,20 @@ This repository contains the source code for the Mock Project. It is a [React](h
 - Feature 2: Provide a list image page with search, sort and pagination.
 - Feature 3: Include image detail page.
 
+## Demo
+
+Demo app is host at [https://react-mock-project-47a93.web.app](https://react-mock-project-47a93.web.app)
+
+Account for login:
+
+```
+Username: admin
+Password: admin
+```
+
 ## Installation
 
-To run this project locally, you need to have [Node.js](https://nodejs.org/) (version 14) and [npm](https://www.npmjs.com/) (or [Yarn](https://yarnpkg.com/)) installed on your machine. Then, follow these steps:
+To run this project locally, you need to have [Node.js](https://nodejs.org/) (version 14) and [Yarn](https://yarnpkg.com/) (version 1.22.19) installed on your machine. Then, follow these steps:
 
 1. Clone the repository:
 

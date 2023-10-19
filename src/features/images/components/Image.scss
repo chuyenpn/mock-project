@@ -1,3 +1,7 @@
+.space-between {
+    justify-content: space-between;
+}
+
 .search {
     margin: 10px;
 }
@@ -34,6 +38,13 @@
     margin-top: 20px;
     .image-detail {
         justify-content: space-between;
+    }
+}
+
+.mx-auto {
+    height: 100%;
+    .img-max-height {
+        max-height: 90%;
     }
 }
 

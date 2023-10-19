@@ -31,7 +31,7 @@ export const useImageStore = create<ImageStore>((set: SetState<ImageStore>) => (
   isLoading: false,
   isSearching: false,
   images: [],
-  searchTerm: 'nature',
+  searchTerm: '',
   page: 1,
   perPage: 9,
   totalPages: 0,

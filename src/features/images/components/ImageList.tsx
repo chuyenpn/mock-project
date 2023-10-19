@@ -52,14 +52,6 @@ export const ImageList = () => {
     getImages();
   }, [searchTermLocal, orderBy, page, getImages]);
 
-  if (isLoading) {
-    return (
-      <div className="w-full h-48 flex justify-center items-center">
-        <Spinner size="lg" />
-      </div>
-    );
-  }
-
   if (!images.length) return null;
 
   return (
@@ -73,7 +65,13 @@ export const ImageList = () => {
         />
         <OrderBy className="flex-1" orderBy={orderBy} setOrderBy={setOrderBy} />
       </div>
-      <ImageGrid images={images} />
+      {isLoading ? (
+        <div className="w-full h-48 flex justify-center items-center">
+          <Spinner size="lg" />
+        </div>
+      ) : (
+        <ImageGrid images={images} />
+      )}
       <Pagination
         total={total}
         page={page}

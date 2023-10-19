@@ -27,18 +27,19 @@ To run this project locally, you need to have [Node.js](https://nodejs.org/) (ve
 3. Install the dependencies:
 
    ````bash
-   npm install
-   or
    yarn install
 
-4. Start the development server:
+4. Copy environment file:
 
    ````bash
-   npm start
-   or
+   cp .env.example .env
+
+5. Start the development server:
+
+   ````bash
    yarn start
 
-5. Open your browser and visit `http://localhost:3000` to see the application.
+6. Open your browser and visit `http://localhost:3000` to see the application.
 
 ## Contributing
 

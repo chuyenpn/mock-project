@@ -52,8 +52,6 @@ export const ImageList = () => {
     getImages();
   }, [searchTermLocal, orderBy, page, getImages]);
 
-  if (!images.length) return null;
-
   return (
     <div className="list">
       <div className="flex justify-between items-center flex-col md:flex-row">

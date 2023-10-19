@@ -26,7 +26,7 @@ export const Layout = ({ children, title, pageHeader }: LayoutProps) => {
           </button>
         </div>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow" style={{ minHeight: 'calc(100vh - 146px)' }}>
         <div className="container mx-auto px-4">{children}</div>
       </main>
       <footer className="bg-gray-800 py-4">

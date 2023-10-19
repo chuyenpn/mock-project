@@ -54,7 +54,7 @@ const Pagination: React.FC<ListProps> = ({
       <div>
         <p className="text-sm text-gray-700">
           Showing <span className="font-medium">{(currentPage - 1) * perPage + 1}</span> to{' '}
-          <span className="font-medium">{currentPage * perPage + 1}</span> of{' '}
+          <span className="font-medium">{currentPage * perPage}</span> of{' '}
           <span className="font-medium">{total}</span> results
         </p>
       </div>

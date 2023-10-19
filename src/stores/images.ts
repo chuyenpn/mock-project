@@ -49,8 +49,9 @@ export const useImageStore = create<ImageStore>((set: SetState<ImageStore>) => (
     >(`?q=${searchTerm}&page=${page}&per_page=${perPage}&order=${orderBy}&key=${API_KEY}`);
     set({
       images: data?.data?.hits,
-      totalPages: Math.ceil(data?.data?.total / perPage),
-      total: data?.data?.total,
+      totalPages:
+        Math.ceil(data?.data?.total / perPage) > 50 ? 50 : Math.ceil(data?.data?.total / perPage),
+      total: data?.data?.total > 450 ? 450 : data?.data?.total,
       isLoading: false,
     });
   },

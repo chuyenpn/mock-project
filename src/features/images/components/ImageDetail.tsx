@@ -14,7 +14,9 @@ export const ImageDetail = () => {
   const { getImageDetail, imageDetail, isLoading } = useImageDetail();
 
   useEffect(() => {
-    getImageDetail(id);
+    if (id) {
+      getImageDetail(id);
+    }
   }, [getImageDetail, id]);
 
   if (isLoading) {

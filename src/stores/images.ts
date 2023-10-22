@@ -46,7 +46,7 @@ export const useImageStore = create<ImageStore>((set: SetState<ImageStore>) => (
     let data: AxiosResponse<DataResponse> | null = null;
     try {
       data = await axios.get<DataResponse, AxiosResponse<DataResponse>>(
-        `?q=${searchTerm}&page=${page}&per_page=${perPage}&order=${orderBy}&key=${API_KEY}`
+        `?q=${encodeURIComponent(searchTerm)}&page=${page}&per_page=${perPage}&order=${orderBy}&key=${API_KEY}`
       );
 
       set({
